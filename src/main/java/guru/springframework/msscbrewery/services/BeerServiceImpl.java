@@ -1,9 +1,10 @@
 package guru.springframework.msscbrewery.services;
 
-import guru.springframework.msscbrewery.web.model.BeerDto;
+import java.util.UUID;
+
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
+import guru.springframework.msscbrewery.web.model.BeerDto;
 
 /**
  * Created by jt on 2019-04-20.
@@ -17,4 +18,13 @@ public class BeerServiceImpl implements BeerService {
                 .beerStyle("Pale Ale")
                 .build();
     }
+
+	@Override
+	public BeerDto saveNewBeer(BeerDto beerDto) {
+		return BeerDto.builder()
+				.id(UUID.randomUUID())
+				.build();
+	}
+
+	
 }
