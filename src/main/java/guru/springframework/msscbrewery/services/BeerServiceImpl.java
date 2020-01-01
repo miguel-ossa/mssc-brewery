@@ -5,10 +5,13 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import guru.springframework.msscbrewery.web.model.BeerDto;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Created by jt on 2019-04-20.
  */
+@Deprecated
+@Slf4j
 @Service
 public class BeerServiceImpl implements BeerService {
     @Override
@@ -30,7 +33,12 @@ public class BeerServiceImpl implements BeerService {
 	public void updateBeer(UUID beerId, BeerDto beerDto) {
 		//TODO add a real impl to update beer
 		
+	}
+
+	@Override
+	public void deleteById(UUID beerId) {
 		
+		log.debug("Deleting a beer...");
 	}
 
 	
